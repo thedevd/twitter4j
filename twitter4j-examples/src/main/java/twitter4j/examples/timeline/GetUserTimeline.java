@@ -53,7 +53,10 @@ public class GetUserTimeline {
         } catch (TwitterException te) {
             te.printStackTrace();
             System.out.println("Failed to get timeline: " + te.getMessage());
-            System.exit(-1);
+            //Please remove this line (System.exit(-1)) which should not be used at all because if an exception occurs
+            // and this statement gets executed, your complete application including the JVM will shutdown.
+            // I have faced this situation, that is why informing about this 
+            //System.exit(-1);
         }
     }
 }
